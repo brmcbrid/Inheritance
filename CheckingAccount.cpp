@@ -10,6 +10,9 @@ CheckingAccount::CheckingAccount(std::string name, int account, double balance, 
 
 void CheckingAccount::withdraw(const double amount) {
     if (amount < ((m_balance + m_overDraftLimit) - 5.00)) {
+        if (amount > m_balance) {
+            m_overDraftLimit -= (amount - m_balance);
+        }
         m_balance -= amount;
     }
     else {

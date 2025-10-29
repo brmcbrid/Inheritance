@@ -21,11 +21,11 @@ public:  // PUBLIC INTERFACE - SETTER (MUTATORS) AND GETTER (accessor) METHODS
     void setAccountHolderName(const std::string name);
     void setAccountNumber(int number);
     void deposit(double amount);
-    void withdraw(double amount);
+    virtual void withdraw(double amount);
     std::string getAccountHolderName();
     int getAccountNumber() const;
     double getBalance() const;
-    void displayAccount() const;
+    virtual void displayAccount() const;
 };
 
 

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "BankAccount.h"
+#include "CheckingAccount.h"
 /*
  * OOP Principles
  * Class: A blueprint for how to build an object.
@@ -49,7 +50,7 @@ int main() {
 
     /*std::cout << "---------------------------\n";
     int acc;
-    BankAccount *accPtr;
+    BankAccount *accPtr=nullptr;
     std::cout << "Which account to deposit money into (1-2): ";
     std::cin >> acc;
 
@@ -64,9 +65,20 @@ int main() {
         accPtr->displayAccount();
     }*/
 
-
-
-
+    // Static instantiation of a Checking Account object - compile time (early binding)
+    // /*
+    // std::cout << "---------------------------\n";
+    // CheckingAccount chkAcc1("Red Green",234151,2550.25,500);
+    // */
+    // Dynamic instantiation of a CheckingAccount object - run time (late binding)
+    std::cout << "---------------------------\n";
+    BankAccount *chkAcc1 = new CheckingAccount("Red Green",234151,2550.25,500);
+    chkAcc1->displayAccount();
+    chkAcc1->withdraw(2900);
+    chkAcc1->displayAccount();
+    chkAcc1->withdraw(100);
+    chkAcc1->displayAccount();
+    delete chkAcc1;  // manage memory to avoid memory leaks
 
     return 0;
 }
