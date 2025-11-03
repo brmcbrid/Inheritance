@@ -1,7 +1,3 @@
-//
-// Created by brmcbrid on 10/27/2025.
-//
-
 #ifndef INHERITANCE_CHECKINGACCOUNT_H
 #define INHERITANCE_CHECKINGACCOUNT_H
 #include <string>

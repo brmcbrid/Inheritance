@@ -8,4 +8,6 @@ add_executable(Inheritance
         BankAccount.cpp
         BankAccount.h
         CheckingAccount.cpp
-        CheckingAccount.h)
+        CheckingAccount.h
+        SavingAccount.cpp
+        SavingAccount.h)

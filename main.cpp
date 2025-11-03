@@ -1,6 +1,8 @@
 #include <iostream>
 #include "BankAccount.h"
 #include "CheckingAccount.h"
+#include "SavingAccount.h"
+
 /*
  * OOP Principles
  * Class: A blueprint for how to build an object.
@@ -48,7 +50,8 @@ int main() {
     account2.withdraw(550.00);
     account2.displayAccount();
 
-    /*std::cout << "---------------------------\n";
+    /*
+    std::cout << "---------------------------\n";
     int acc;
     BankAccount *accPtr=nullptr;
     std::cout << "Which account to deposit money into (1-2): ";
@@ -66,10 +69,13 @@ int main() {
     }*/
 
     // Static instantiation of a Checking Account object - compile time (early binding)
-    // /*
-    // std::cout << "---------------------------\n";
-    // CheckingAccount chkAcc1("Red Green",234151,2550.25,500);
-    // */
+     std::cout << "---------------------------\n";
+     /*CheckingAccount chkAcc1("Red Green",234151,2550.25,500);
+     chkAcc1.displayAccount();
+     chkAcc1.withdraw(2900);
+     chkAcc1.displayAccount();
+     chkAcc1.withdraw(100);
+     chkAcc1.displayAccount();*/
     // Dynamic instantiation of a CheckingAccount object - run time (late binding)
     std::cout << "---------------------------\n";
     BankAccount *chkAcc1 = new CheckingAccount("Red Green",234151,2550.25,500);
@@ -79,6 +85,11 @@ int main() {
     chkAcc1->withdraw(100);
     chkAcc1->displayAccount();
     delete chkAcc1;  // manage memory to avoid memory leaks
+    std::cout << "---------------------------\n";
+    SavingAccount saveAcc1("Jack Pot",13452,4200,8.25);
+    saveAcc1.displayAccount();
+    saveAcc1.addMonthlyInterest();
+    saveAcc1.displayAccount();
 
     return 0;
 }
